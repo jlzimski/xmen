@@ -1,5 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
+import Weather from './apps/weather';
 
 function componentDidMount() {
   if ("geolocation" in navigator) {
@@ -39,6 +40,7 @@ function App() {
   return (
     <div className="App">
       <h1>Weather</h1>
+      <Weather />
       <h2>NASA</h2>
       <h3>Ticketmaster</h3>
     </div>
