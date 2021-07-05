@@ -1,20 +1,21 @@
-import {
-    Navbar,
-    Nav,
-    NavItem,
-    NavLink
-} from 'reactstrap';
+import React from 'react';
 import Weather from '../apps/weather';
 
-const Header = () => {
+const Header = (props) => {
+    const lat = props.lat;
+    const lon = props.lon;
+
     return(
-        <Navbar>
-            <Nav className='ml=auto' navbar>
-                <NavItem>
-                    <Weather />
-                </NavItem>
-            </Nav>
-        </Navbar>
+        <div className="weatherResults">
+            <p><a href='/'>Team X-Men</a></p>
+            <p>
+                <Weather
+                    lat={lat}
+                    lon={lon}
+                />
+                </p>
+            <p><a href="https://github.com/jlzimski/xmen" target="blank">GitHub</a></p>
+        </div>
     )
 }
 
