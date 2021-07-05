@@ -1,47 +1,29 @@
 import './App.css';
-import React, { Component } from 'react';
-import Weather from './apps/weather';
+import React, { Component, useState, useEffect } from 'react';
+import Header from './site/Header';
+import NasaPic from './apps/nasa';
+  
+const App = () => {
+  const [lat, setLat] = useState('');
+  const [lon, setLon] = useState('');
 
-function componentDidMount() {
-  if ("geolocation" in navigator) {
-    console.log("Available");
-  } else {
-    console.log("Not Available");
-  }
-}
-componentDidMount();
-
-function getLocation() {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    console.log("Latitude is :", position.coords.latitude);
-    console.log("Longitude is :", position.coords.longitude);
-    let lat = position.coords.latitude;
-    console.log(lat);
-    let lon = position.coords.longitude;
-    console.log(lon);
+  const componentDidMount = () => {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLat(position.coords.latitude)
+      setLon(position.coords.longitude)
   });
 }
-getLocation();
 
-
-
-function App() {
-  // const [location, setLocation] = useState('');
-
-  // useEffect(() => {
-  //   if (localStorage.getItem('location')){
-  //     setLocation(localStorage.getItem('location');)
-  //   }
-  // }, [])
-
-  
-  
+componentDidMount();
   
   return (
     <div className="App">
-      <h1>Weather</h1>
-      <Weather />
+      <Header />
       <h2>NASA</h2>
+      <NasaPic 
+        lat={lat}
+        lon={lon}
+      />
       <h3>Ticketmaster</h3>
     </div>
   );
