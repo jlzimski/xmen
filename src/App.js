@@ -1,48 +1,48 @@
 import './App.css';
-import React, { Component } from 'react';
-// import Weather from './apps/weather';
-// import Nasa from './apps/nasa';
+import React, {  useState } from 'react'; // Component useEffect
+// import Header from './site/Header';
+import Weather from './apps/weather';
+import NasaPic from './apps/nasa';
+  
+const App = () => {
+  const [lat, setLat] = useState('');
+  const [lon, setLon] = useState('');
 
-function componentDidMount() {
-  if ("geolocation" in navigator) {
-    console.log("Available");
-  } else {
-    console.log("Not Available");
-  }
+  const componentDidMount = () => {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log("Latitude:", position.coords.latitude);
+      console.log("Longitude:", position.coords.longitude);
+      setLat(position.coords.latitude);
+      setLon(position.coords.longitude);
+  }); 
 }
+
 componentDidMount();
 
-function getLocation() {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    console.log("Latitude is :", position.coords.latitude);
-    console.log("Longitude is :", position.coords.longitude);
-    let lat = position.coords.latitude;
-    console.log(lat);
-    let lon = position.coords.longitude;
-    console.log(lon);
-  });
-}
-getLocation();
+  // const componentDidMount = () => {
+  //  if (navigator.geoLocation){
+  //   navigator.geolocation.watchPosition(function(position) {
+  //     console.log("Latitude:", position.coords.latitude);
+  //     console.log("Longitude:", position.coords.longitude);
+  //     setLat(position.coords.latitude)
+  //     setLon(position.coords.longitude)
+  // }); 
+  // }
+
+  // componentDidMount();
 
 
-
-function App() {
-  // const [location, setLocation] = useState('');
-
-  // useEffect(() => {
-  //   if (localStorage.getItem('location')){
-  //     setLocation(localStorage.getItem('location');)
-  //   }
-  // }, [])
-
-  
-  
-  
   return (
     <div className="App">
-      <h1>Weather</h1>
+      <Weather 
+        lat={lat}
+        lon={lon}
+      />
       <h2>NASA</h2>
-      <img src="https://api.nasa.gov/planetary/earth/imagery?lon=-95.33&amp;lat=29.78&amp;date=2018-01-01&amp;dim=0.15&amp;api_key=HSkfDy1fyixzHxV8mgTWRtKiQ8F82tEDzhqqOAuA" width="2048" height="2048"></img>
+      <NasaPic 
+        lat={lat}
+        lon={lon}
+      />
       <h3>Ticketmaster</h3>
     </div>
   );
