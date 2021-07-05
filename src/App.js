@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
-import Weather from './apps/weather';
+// import Weather from './apps/weather';
+// import Nasa from './apps/nasa';
 
 function componentDidMount() {
   if ("geolocation" in navigator) {
@@ -40,8 +41,8 @@ function App() {
   return (
     <div className="App">
       <h1>Weather</h1>
-      <Weather />
       <h2>NASA</h2>
+      <img src="https://api.nasa.gov/planetary/earth/imagery?lon=-95.33&amp;lat=29.78&amp;date=2018-01-01&amp;dim=0.15&amp;api_key=HSkfDy1fyixzHxV8mgTWRtKiQ8F82tEDzhqqOAuA" width="2048" height="2048"></img>
       <h3>Ticketmaster</h3>
     </div>
   );
