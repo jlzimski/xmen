@@ -2,7 +2,7 @@ import {
     Navbar,
     Nav,
     NavItem,
-    NavLink
+    // NavLink
 } from 'reactstrap';
 import Weather from '../apps/weather';
 

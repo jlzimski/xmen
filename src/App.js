@@ -1,6 +1,7 @@
 import './App.css';
-import React, { Component, useState, useEffect } from 'react';
-import Header from './site/Header';
+import React, {  useState } from 'react'; // Component useEffect
+// import Header from './site/Header';
+import Weather from './apps/weather';
 import NasaPic from './apps/nasa';
   
 const App = () => {
@@ -9,16 +10,34 @@ const App = () => {
 
   const componentDidMount = () => {
     navigator.geolocation.getCurrentPosition(function(position) {
-      setLat(position.coords.latitude)
-      setLon(position.coords.longitude)
-  });
+      console.log("Latitude:", position.coords.latitude);
+      console.log("Longitude:", position.coords.longitude);
+      setLat(position.coords.latitude);
+      setLon(position.coords.longitude);
+  }); 
 }
 
 componentDidMount();
-  
+
+  // const componentDidMount = () => {
+  //  if (navigator.geoLocation){
+  //   navigator.geolocation.watchPosition(function(position) {
+  //     console.log("Latitude:", position.coords.latitude);
+  //     console.log("Longitude:", position.coords.longitude);
+  //     setLat(position.coords.latitude)
+  //     setLon(position.coords.longitude)
+  // }); 
+  // }
+
+  // componentDidMount();
+
+
   return (
     <div className="App">
-      <Header />
+      <Weather 
+        lat={lat}
+        lon={lon}
+      />
       <h2>NASA</h2>
       <NasaPic 
         lat={lat}
