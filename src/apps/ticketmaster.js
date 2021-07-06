@@ -109,10 +109,10 @@ const EventMaster = (props) => {
                 <h1>TicketMaster</h1>
                 <p>This is event central.</p>
                 <ul>
-                    <li>result.name</li>
-                    <li>result.date.start</li>
-                    <li>result.images.url</li>
-                    <li>result.url</li>
+                    <li>result.events.name</li>
+                    <li>result.events.date.start</li>
+                    <li>result.events.images.url</li>
+                    <li>result.events.url</li>
                 </ul>
             </div>
             {

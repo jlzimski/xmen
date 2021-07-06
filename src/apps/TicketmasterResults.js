@@ -7,23 +7,21 @@ const TicketmasterResults = (props) => {
             {props.results.map(result => {
                 return(
                     <div key={result._id}>
-                        <h3>{result.name}</h3>
-                        {/* {result.multimedia.length > 1 ? <img alt="article" src={`http://www.nytimes.com/${result.multimedia[1].url}`} /> : ''} */}
+                        <h3>{result.events.name}</h3>
+                        
                         <p>
-                            {result.dates.start}
+                            {result.events.dates.start}
                             <br />
-                            {/* {result.keywords.length > 0 ? ' Keywords: ' : ''} */}
+                            {result.events.image.url}
+
                         </p>
-                        <ul>
-                            {result.keywords.map(keyword => <li key={keyword.value}>{keyword.value}</li>)}
-                        </ul>
-                        <a href={result.url}><button>Get Tickets!</button></a>
+                        
+                        <a href={result.events.url}><button>Get Tickets!</button></a>
                     </div>
                 )
             })}
             </div>
-            <button onClick={(e) => props.changePageNumber(e, 'down')}>Previous 10</button>
-            <button onClick={(e) => props.changePageNumber(e, 'up')}>Next 10</button>
+
         </div>
     );
 };
