@@ -11,6 +11,11 @@ import React  from 'react'; // useState
 //     CarouselCaption
 // } from 'reactstrap';
 
+const baseURL = "https://app.ticketmaster.com/discovery/v2/suggest?apikey=";
+const key = "kyQ3Ij0I8EakwB9arwVA1jLWivio2qYi";
+const radius = 150;
+const unit = "miles";
+
     //example const code for slide formation, need to set variables for altText and caption so they iterate up each item that is mapped
     // {
     // src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
@@ -19,8 +24,33 @@ import React  from 'react'; // useState
     // },
 
 
+const EventMaster = (props) => {
+    const lat = props.lat;
+    const lon = props.lon;
+    const [results, setResults] = useState([]);
+    console.log(lat, lon);
 
-const EventMaster = () => {
+    //created infinite loop
+    // async function fetchResults() {
+    //     let url = `${baseURL}${key}&latlong=${lat},${lon}&radius=${radius}&unit=${unit}`;
+    //     let response = await fetch(url);
+    //     let data = await response.json();
+    //     setResults(data);
+    // }
+
+    const fetchResults = () => {
+        let url = `${baseURL}${key}&latlong=${lat},${lon}&radius=${radius}&unit=${unit}`;
+        console.log(url);
+
+        fetch(url)
+            .then(res => console.log(res.json()))
+            .then(data => setResults(data.response._embedded.events))//can't figure out the right way to dig in
+            .catch(err => console.log(err));
+    }
+    fetchResults();
+    console.log(results);
+
+
 
 
 
