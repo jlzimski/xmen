@@ -1,23 +1,21 @@
 import React from 'react';
-import { Jumbotron, ButtonToggle, Container } from 'reactstrap';
 import Weather from '../apps/weather';
 
 const Header = (props) => {
+    const lat = props.lat;
+    const lon = props.lon;
+
     return(
-        <div className="weather">
-            <Jumbotron fluid>
-                <Container fluid>
-                <p>Something to see</p>
-                <div>
-                    <Weather />
-                </div>
-                {/* add weather fetching component */}
-                <ButtonToggle color="info" size="lg" ></ButtonToggle>
-                </Container>
-            </Jumbotron>
+        <div className="weatherResults">
+            <p><a href='/'>Team X-Men</a></p>
+                <Weather
+                    lat={lat}
+                    lon={lon}
+                />
+                 <ButtonToggle color="info" size="lg" ></ButtonToggle>
+            <p><a href="https://github.com/jlzimski/xmen" target="blank">GitHub</a></p>
         </div>
-    
-    );
-};
+    )
+}
 
 export default Header;

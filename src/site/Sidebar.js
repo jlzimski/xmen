@@ -1,13 +1,13 @@
 import React from 'react';
-import EventMaster from '../apps/ticketmaster';
+import NasaPic from '../apps/nasa';
 
-const Home = (props) => {
+const Sidebar = (props) => {
     const lat = props.lat;
     const lon = props.lon;
 
     return(
-        <div className="eventCentral">
-            <EventMaster 
+        <div className="nasaImg">
+            <NasaPic 
                 lat={lat}
                 lon={lon}
             />
@@ -15,4 +15,4 @@ const Home = (props) => {
     )
 }
 
-export default Home;
+export default Sidebar;

@@ -1,14 +1,14 @@
 import './App.css';
 import React, {  useState } from 'react'; // Component useEffect
 import Header from './site/Header';
-// import Weather from './apps/weather';
-import NasaPic from './apps/nasa';
+import Sidebar from './site/Sidebar';
+import Home from './site/Home';
   
 const App = () => {
   const [lat, setLat] = useState('');
   const [lon, setLon] = useState('');
 
-  const componentDidMount = () => {
+  async function componentDidMount() {
     navigator.geolocation.getCurrentPosition(function(position) {
       console.log("Latitude:", position.coords.latitude);
       console.log("Longitude:", position.coords.longitude);
@@ -19,33 +19,22 @@ const App = () => {
 
 componentDidMount();
 
-  // const componentDidMount = () => {
-  //  if (navigator.geoLocation){
-  //   navigator.geolocation.watchPosition(function(position) {
-  //     console.log("Latitude:", position.coords.latitude);
-  //     console.log("Longitude:", position.coords.longitude);
-  //     setLat(position.coords.latitude)
-  //     setLon(position.coords.longitude)
-  // }); 
-  // }
-
-  // componentDidMount();
-
-
   return (
     <div className="App">
-      <header className="App-header">
+    <header>
       <Header 
         lat={lat}
         lon={lon}
-      />
-      </header>
-      <h2>NASA</h2>
-      <NasaPic 
+        />
+    </header>
+      <Sidebar 
         lat={lat}
         lon={lon}
       />
-      <h3>Ticketmaster</h3>
+      <Home 
+        lat={lat}
+        lon={lon}
+      />
     </div>
   );
 }

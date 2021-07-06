@@ -4,6 +4,11 @@
 // dim-width and height for image in degrees; default .025
 
 import React from 'react';
+import {
+    Card,
+    CardImg,
+    CardBody
+} from 'reactstrap';
 
 const baseURL = 'https://api.nasa.gov/planetary/earth/imagery?';
 const key = 'HSkfDy1fyixzHxV8mgTWRtKiQ8F82tEDzhqqOAuA';
@@ -17,7 +22,11 @@ const NasaPic = (props) => {
 
     return(
         <div>
-            <img src={url} alt="Nasa Satellite" width="40%" height="25%" />
+            <Card>
+                <CardBody>
+                    <CardImg src={url} className="nasaImg" alt="Nasa Satellite" width="500" height="600" />
+                </CardBody> 
+            </Card>
         </div>
     )
 }
