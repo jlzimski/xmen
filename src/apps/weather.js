@@ -2,7 +2,7 @@
 // URL = api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 //list.main.temp for current temp & list.weather[0].main for first in array of current conditions
 import React, { useState, useEffect } from 'react';
-import WeatherResults from './WeatherResults';
+// import WeatherResults from './WeatherResults';
 
 // import Conditions from './conditions/Conditions';
 
@@ -41,9 +41,11 @@ const Weather = (props) => {
         setIconID(iconID);
     };
     useEffect(() => {
+
         fetchWeather();
         }, []);
         
+
     return (
 
         <div>
@@ -57,6 +59,9 @@ const Weather = (props) => {
                     <li>Feels like: {feels_like}</li>                   
                 </ul>
             </div>
+            {/* {
+                    results.length > 0 ? <WeatherResults response={response} /> : null
+                } */}
         </div>
 
     )
