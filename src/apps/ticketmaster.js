@@ -2,14 +2,14 @@
 // SECRET = klS7sMFJuhAO3Toe
 // URL = https://app.ticketmaster.com/discovery/v2/events
 // latlon or geoPoint are query parameters
-import React, { useState } from 'react';
-import {
-    Carousel,
-    CarouselItem,
-    CarouselControl,
-    CarouselIndicators,
-    CarouselCaption
-} from 'reactstrap';
+import React  from 'react'; // useState
+// import {
+//     Carousel,
+//     CarouselItem,
+//     CarouselControl,
+//     CarouselIndicators,
+//     CarouselCaption
+// } from 'reactstrap';
 
 const baseURL = "https://app.ticketmaster.com/discovery/v2/suggest?apikey=";
 const key = "kyQ3Ij0I8EakwB9arwVA1jLWivio2qYi";
@@ -51,6 +51,10 @@ const EventMaster = (props) => {
     console.log(results);
 
 
+
+
+
+    
 
     // example code on reactstrap.github.io carousel, will probably need some of this to get the carousel working after the fetch
     // const Example = (props) => {

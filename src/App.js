@@ -1,6 +1,6 @@
 import './App.css';
 import React, {  useState } from 'react'; // Component useEffect
-import Header from './site/Header';
+// import Header from './site/Header';
 import Sidebar from './site/Sidebar';
 import Home from './site/Home';
   
@@ -22,10 +22,10 @@ componentDidMount();
   return (
     <div className="App">
     <header>
-      <Header 
+      {/* <Header 
         lat={lat}
         lon={lon}
-        />
+        /> */}
     </header>
       <Sidebar 
         lat={lat}
