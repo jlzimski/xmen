@@ -1,21 +1,23 @@
-import {
-    Navbar,
-    Nav,
-    NavItem,
-    // NavLink
-} from 'reactstrap';
+import React from 'react';
+import { Jumbotron, ButtonToggle, Container } from 'reactstrap';
 import Weather from '../apps/weather';
 
-const Header = () => {
+const Header = (props) => {
     return(
-        <Navbar>
-            <Nav className='ml=auto' navbar>
-                <NavItem>
+        <div className="weather">
+            <Jumbotron fluid>
+                <Container fluid>
+                <p>Something to see</p>
+                <div>
                     <Weather />
-                </NavItem>
-            </Nav>
-        </Navbar>
-    )
-}
+                </div>
+                {/* add weather fetching component */}
+                <ButtonToggle color="info" size="lg" ></ButtonToggle>
+                </Container>
+            </Jumbotron>
+        </div>
+    
+    );
+};
 
 export default Header;
