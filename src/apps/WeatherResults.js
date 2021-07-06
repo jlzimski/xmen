@@ -4,20 +4,20 @@ const WeatherResults = (props) => {
     return(
         <div>
             <div>
-            {props.results.map(result => {
+            
                 return(
-                    <div key={result._id}>
+                    <div key={props.response}>
                         <ul>
-                            <li>{result.weather.icon}</li>
-                            <li>{result.main.temp}</li>
-                            <li>{result.name}</li>
-                            <li>{result.dt}</li>
-                            <li>{result.weather.description}</li>
-                            <li>{result.main.feels_like}</li>
+                            <li>{props.response.weather.icon}</li>
+                            <li>{props.response.main.temp}</li>
+                            <li>{props.response.name}</li>
+                            <li>{props.response.dt}</li>
+                            <li>{props.response.weather.description}</li>
+                            <li>{props.response.main.feels_like}</li>
                         </ul>
                     </div>
                 )
-            })}
+            )}
             </div>
 
         </div>

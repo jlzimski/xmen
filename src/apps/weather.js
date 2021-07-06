@@ -16,7 +16,7 @@ const Weather = (props) => {
 
     const key = '6ccc78695554c2475d4eac24bbf01d17';
     const unit = 'imperial'
-
+    const [response, setResponse] = useState({})
     const [feels_like, setFeelsLike] = useState('');
     const [mainTemp, setMainTemp] = useState('');
     const [description, setDescription] = useState('');
@@ -27,9 +27,10 @@ const Weather = (props) => {
 
     useEffect(() => {
         fetch(weatherURL)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data)
+        .then((response) => response.json())
+        .then((response) => {
+            console.log(response);
+            setResponse(response)
             
         })
     }, [weatherURL])
@@ -46,6 +47,9 @@ const Weather = (props) => {
                     <li>feels like: (main.feels_like)</li>                   
                 </ul>
             </div>
+            {/* {
+                    results.length > 0 ? <WeatherResults response={response} /> : null
+                } */}
         </div>
 
     )
