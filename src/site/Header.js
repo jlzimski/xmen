@@ -6,14 +6,18 @@ const Header = (props) => {
     const lon = props.lon;
 
     return(
-        <div className="weatherResults">
-            <p><a href='/'>Team X-Men</a></p>
+        <div className="App-header">
+            <div className="team">
+            <p className="Title"><a href='/'>Team X-Men</a></p>
+            <p className="github"><a href="https://github.com/jlzimski/xmen" target="blank">@GitHub</a></p>
+            </div>
+            <div className="weather">    
                 <Weather
                     lat={lat}
                     lon={lon}
                 />
                 {/* <ButtonToggle color="info" size="lg" ></ButtonToggle> */}
-            <p><a href="https://github.com/jlzimski/xmen" target="blank">GitHub</a></p>
+            </div>
         </div>
     )
 }

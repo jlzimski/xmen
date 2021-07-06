@@ -1,6 +1,6 @@
 import './App.css';
 import React, {  useState } from 'react'; // Component useEffect
-// import Header from './site/Header';
+import Header from './site/Header';
 import Sidebar from './site/Sidebar';
 import Home from './site/Home';
   
@@ -20,13 +20,13 @@ const App = () => {
 componentDidMount();
 
   return (
-    <div className="App">
-    <header>
-      {/* <Header 
+    <div className="App" id="grid">
+      
+      <Header 
         lat={lat}
         lon={lon}
-        /> */}
-    </header>
+        />
+      
       <Sidebar 
         lat={lat}
         lon={lon}

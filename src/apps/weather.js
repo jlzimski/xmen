@@ -11,14 +11,7 @@ const Weather = (props) => {
     const lon = props.lon;
 
     console.log(lat, lon); //Leave in, if not won't work
-    // const [unit, setUnit] = useState('imperial');
-    // const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
 
-    //     const weatherURL =
-    //     `http://api.openweathermap.org/data/2.5/forecast?zip=11102&units=imperial&APPID=${apiConfig.owmKey}`
-    // fetch(weatherURL)
-    //     .then(res => res.json())
-    //     .then(data => console.log("Data List Loaded", data.list))
 
     const key = '6ccc78695554c2475d4eac24bbf01d17';
     const unit = 'imperial'
@@ -37,12 +30,18 @@ const Weather = (props) => {
         .then((data) => {
             console.log(data)
         })
-    }, [])
+    }, [weatherURL])
     return (
 
         <div>
             <div>
-                
+                <ul>
+                    <li>city</li>
+                    <li>icon</li>
+                    <li>Temp</li>
+                    <li>description</li>
+                    <li>feels like</li>                   
+                </ul>
             </div>
         </div>
 

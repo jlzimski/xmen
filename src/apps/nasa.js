@@ -21,13 +21,13 @@ const NasaPic = (props) => {
     let url = `${baseURL}lon=${lon}&lat=${lat}&dim=0.15&api_key=${key}`;
 
     return(
-        <div>
             <Card>
                 <CardBody>
-                    <CardImg src={url} className="nasaImg" alt="Nasa Satellite" width="500" height="600" />
+                    <h1>Current Location</h1>
+                    <CardImg src={url}  alt="Nasa Satellite" width="750px" height="750px" />
                 </CardBody> 
             </Card>
-        </div>
+        
     )
 }
 
