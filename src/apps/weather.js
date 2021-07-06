@@ -15,34 +15,45 @@ const Weather = (props) => {
 
     const key = '6ccc78695554c2475d4eac24bbf01d17';
     const unit = 'imperial'
-
+    const [results, setResults] = useState('');
     const [feels_like, setFeelsLike] = useState('');
     const [mainTemp, setMainTemp] = useState('');
     const [description, setDescription] = useState('');
     const [main, setMain] = useState('');
     const [iconID, setIconID] = useState('');
+    const [locationName, setLocName] = useState('');
 
     const weatherURL = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${key}`
-
+    const fetchWeather = async () => {
+        const res = await fetch(weatherURL);
+        const data = await res.json();
+        const mainTemp = data.main.temp;
+        const feels_like = data.main.feels_like;
+        const description = data.weather[0].description;
+        const iconID = data.weather[0].icon;
+        const locationName = data.name;
+        setResults(data)
+        setFeelsLike(feels_like);
+        setMainTemp(mainTemp);
+        setDescription(description);
+        setLocName(locationName);
+        setIconID(iconID);
+    };
     useEffect(() => {
-        fetch(weatherURL)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data)
-            
-        })
-    }, [weatherURL])
+        fetchWeather();
+        }, []);
+        
     return (
 
         <div>
             <div>
                 <ul>
-                    <li>icon(weather.icon)</li>
-                    <li>temp: (main.temp)</li>
-                    <li>location: (name)</li>
-                    <li>current time: (dt)</li>
-                    <li>description: (weather.description)</li>
-                    <li>feels like: (main.feels_like)</li>                   
+                    <li>{iconID}</li>
+                    <li>Current Temp: {mainTemp}F</li>
+                    <li>Location: {locationName}</li>
+                    {/* <li>current time: (dt)</li> */}
+                    <li>Description: {description}</li>
+                    <li>Feels like: {feels_like}</li>                   
                 </ul>
             </div>
         </div>
