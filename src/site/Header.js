@@ -12,6 +12,7 @@ const Header = (props) => {
                     lat={lat}
                     lon={lon}
                 />
+                 <ButtonToggle color="info" size="lg" ></ButtonToggle>
             <p><a href="https://github.com/jlzimski/xmen" target="blank">GitHub</a></p>
         </div>
     )

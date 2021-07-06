@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component, useState, useEffect } from 'react';
+import React, {  useState } from 'react'; // Component useEffect
 import Header from './site/Header';
 import Sidebar from './site/Sidebar';
 import Home from './site/Home';
@@ -10,19 +10,23 @@ const App = () => {
 
   async function componentDidMount() {
     navigator.geolocation.getCurrentPosition(function(position) {
-      setLat(position.coords.latitude)
-      setLon(position.coords.longitude)
-  });
-}
+      console.log("Latitude:", position.coords.latitude);
+      console.log("Longitude:", position.coords.longitude);
+      setLat(position.coords.latitude);
+      setLon(position.coords.longitude);
+  }); 
+  }
 
 componentDidMount();
-  
+
   return (
     <div className="App">
+    <header>
       <Header 
         lat={lat}
         lon={lon}
         />
+    </header>
       <Sidebar 
         lat={lat}
         lon={lon}
