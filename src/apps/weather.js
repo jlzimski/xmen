@@ -9,7 +9,8 @@ const Weather = (props) => {
 
     const lat = props.lat;
     const lon = props.lon;
-    console.log(lat, lon);
+
+    console.log(lat, lon); //Leave in, if not won't work
     // const [unit, setUnit] = useState('imperial');
     // const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
 
@@ -21,12 +22,15 @@ const Weather = (props) => {
 
     const key = '6ccc78695554c2475d4eac24bbf01d17';
     const unit = 'imperial'
+
     const [feels_like, setFeelsLike] = useState('');
     const [mainTemp, setMainTemp] = useState('');
     const [description, setDescription] = useState('');
     const [main, setMain] = useState('');
     const [iconID, setIconID] = useState('');
+
     const weatherURL = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${key}`
+
     useEffect(() => {
         fetch(weatherURL)
         .then((res) => res.json())
@@ -35,11 +39,13 @@ const Weather = (props) => {
         })
     }, [])
     return (
+
         <div>
             <div>
                 
             </div>
         </div>
+
     )
 }
 
