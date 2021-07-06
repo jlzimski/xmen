@@ -38,11 +38,11 @@ const Weather = (props) => {
             <div>
                 <ul>
                     <li>icon(weather.icon)</li>
-                    <li>temp(main.temp)</li>
-                    <li>city(name)</li>
-                    <li>current time(dt)</li>
-                    <li>description(weather.description)</li>
-                    <li>feels like(main.feels_like)</li>                   
+                    <li>temp: (main.temp)</li>
+                    <li>location: (name)</li>
+                    <li>current time: (dt)</li>
+                    <li>description: (weather.description)</li>
+                    <li>feels like: (main.feels_like)</li>                   
                 </ul>
             </div>
         </div>
