@@ -1,7 +1,7 @@
 import './App.css';
 import React, {  useState } from 'react'; // Component useEffect
-// import Header from './site/Header';
-import Weather from './apps/weather';
+import Header from './site/Header';
+// import Weather from './apps/weather';
 import NasaPic from './apps/nasa';
   
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
       setLat(position.coords.latitude);
       setLon(position.coords.longitude);
   }); 
-}
+  }
 
 componentDidMount();
 
@@ -34,10 +34,12 @@ componentDidMount();
 
   return (
     <div className="App">
-      <Weather 
+      <header className="App-header">
+      <Header 
         lat={lat}
         lon={lon}
       />
+      </header>
       <h2>NASA</h2>
       <NasaPic 
         lat={lat}
