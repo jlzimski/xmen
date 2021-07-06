@@ -29,6 +29,7 @@ const Weather = (props) => {
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
+            
         })
     }, [weatherURL])
     return (
@@ -36,11 +37,12 @@ const Weather = (props) => {
         <div>
             <div>
                 <ul>
-                    <li>city</li>
-                    <li>icon</li>
-                    <li>Temp</li>
-                    <li>description</li>
-                    <li>feels like</li>                   
+                    <li>icon(weather.icon)</li>
+                    <li>temp(main.temp)</li>
+                    <li>city(name)</li>
+                    <li>current time(dt)</li>
+                    <li>description(weather.description)</li>
+                    <li>feels like(main.feels_like)</li>                   
                 </ul>
             </div>
         </div>

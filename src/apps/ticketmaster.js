@@ -3,6 +3,7 @@
 // URL = https://app.ticketmaster.com/discovery/v2/events
 // latlon or geoPoint are query parameters
 import React, { useState }from 'react'; // useState
+import TicketmasterResults from './TicketmasterResults';
 // import {
 //     Carousel,
 //     CarouselItem,
@@ -107,7 +108,16 @@ const EventMaster = (props) => {
             <div>
                 <h1>TicketMaster</h1>
                 <p>This is event central.</p>
+                <ul>
+                    <li>result.name</li>
+                    <li>result.date.start</li>
+                    <li>result.images.url</li>
+                    <li>result.url</li>
+                </ul>
             </div>
+            {
+                    results.length > 0 ? <TicketmasterResults results={results} /> : null
+                }
         </div>
     )
 }

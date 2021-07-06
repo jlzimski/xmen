@@ -43,6 +43,7 @@
 
 .weather {
   width: 700px;
+  max-width: 500px;
   grid-column: 2 / 3;
   position: absolute;
   right: 0px;
@@ -70,10 +71,13 @@
   font-family: fantasy;
   font-size: 24px;
   background-color: rgb(168, 250, 246);
+  
 }
 
 .card-img {
   border: indigo 5px solid;
+  width: 90%;
+  margin-bottom: 7px;
 }
 
 .eventCentral {
