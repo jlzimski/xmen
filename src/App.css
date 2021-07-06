@@ -1,5 +1,5 @@
 .nasaImg {
-  margin-left: 5%;
+  margin: 4% 7% 0%;
   float: left;
 }
 
@@ -8,12 +8,14 @@
   margin-left: 5%;
   margin-right: 5%;
   justify-content: space-around;
-  
 }
 
 .eventCentral {
-  border: red 2px solid;
-  /* text-align:right; */
+  width: 33%;
+  height: auto;
   float: right;
-  margin-right: 5%;
+  margin: 5% 7% 0%;
+  background-color: indigo;
+  color:lightgoldenrodyellow;
+  text-align: center;
 }
