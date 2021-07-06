@@ -9,14 +9,7 @@ const Weather = (props) => {
 
     const lat = props.lat;
     const lon = props.lon;
-    // const [unit, setUnit] = useState('imperial');
-    // const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
-
-    //     const weatherURL =
-    //     `http://api.openweathermap.org/data/2.5/forecast?zip=11102&units=imperial&APPID=${apiConfig.owmKey}`
-    // fetch(weatherURL)
-    //     .then(res => res.json())
-    //     .then(data => console.log("Data List Loaded", data.list))
+    console.log(lat, lon) //Leave in, if not won't work
 
     const key = '6ccc78695554c2475d4eac24bbf01d17';
     const [feels_like, setFeelsLike] = useState('');
