@@ -2,14 +2,14 @@
 // SECRET = klS7sMFJuhAO3Toe
 // URL = https://app.ticketmaster.com/discovery/v2/events
 // latlon or geoPoint are query parameters
-import React, { useState } from 'react';
-import {
-    Carousel,
-    CarouselItem,
-    CarouselControl,
-    CarouselIndicators,
-    CarouselCaption
-} from 'reactstrap';
+import React  from 'react'; // useState
+// import {
+//     Carousel,
+//     CarouselItem,
+//     CarouselControl,
+//     CarouselIndicators,
+//     CarouselCaption
+// } from 'reactstrap';
 
     //example const code for slide formation, need to set variables for altText and caption so they iterate up each item that is mapped
     // {
@@ -21,6 +21,10 @@ import {
 
 
 const EventMaster = () => {
+
+
+
+    
 
     // example code on reactstrap.github.io carousel, will probably need some of this to get the carousel working after the fetch
     // const Example = (props) => {
