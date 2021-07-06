@@ -18,7 +18,7 @@ const NasaPic = (props) => {
     const lat = props.lat;
     const lon = props.lon;
     
-    let url = `${baseURL}lon=${lon}&lat=${lat}&dim=0.15&api_key=${key}`;
+    let url = `${baseURL}lon=${lon}&lat=${lat}&dim=0.07&api_key=${key}`;
 
     return(
             <Card>
