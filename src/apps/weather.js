@@ -39,6 +39,7 @@ const Weather = (props) => {
         setDescription(description);
         setLocName(locationName);
         setIconID(iconID);
+        console.log(data);
     };
     useEffect(() => {
 
