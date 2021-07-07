@@ -20,21 +20,27 @@ const App = () => {
 componentDidMount();
 
   return (
-    <div className="App" id="grid">
+    <div>
+      {lat && lon ? (
+        <div className="App" id="grid">
+          <Header 
+            lat={lat}
+            lon={lon}
+            />
       
-      <Header 
-        lat={lat}
-        lon={lon}
-        />
+          <Sidebar 
+            lat={lat}
+            lon={lon}
+          />
+          <Home 
+            lat={lat}
+            lon={lon}
+          />
+          </div>
+      ) : 
+      <h1>Looks like we can't help you without your location.</h1>
+      }
       
-      <Sidebar 
-        lat={lat}
-        lon={lon}
-      />
-      <Home 
-        lat={lat}
-        lon={lon}
-      />
     </div>
   );
 }
